@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: playlists.map((p) => AlbumCard(title: p['title']!, image: p['image']!)).toList(),
             ),
           ),
-          Align(alignment: Alignment.bottomCenter, child: MiniPlayer()),
+          Align(alignment: Alignment.bottomCenter, child: MiniPlayer(songIndex: 0)),
         ],
       ),
     );
