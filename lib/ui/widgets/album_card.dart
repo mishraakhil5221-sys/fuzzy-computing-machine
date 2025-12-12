@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
+import '../../theme/fonts.dart';
 
 class AlbumCard extends StatelessWidget {
   final String title;
@@ -13,15 +14,19 @@ class AlbumCard extends StatelessWidget {
       margin: EdgeInsets.all(8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: AppColors.glass,
+        boxShadow: [
+          BoxShadow(color: AppColors.cardShadow, blurRadius: 8, offset: Offset(0, 4))
+        ],
         image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
       ),
-      child: Align(
-        alignment: Alignment.bottomLeft,
-        child: Padding(
-          padding: EdgeInsets.all(8),
-          child: Text(title, style: TextStyle(color: Colors.white)),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: AppColors.glass, // glass overlay
         ),
+        alignment: Alignment.bottomLeft,
+        padding: EdgeInsets.all(8),
+        child: Text(title, style: AppFonts.title(16)),
       ),
     );
   }
