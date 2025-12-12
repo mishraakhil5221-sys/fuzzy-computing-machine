@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class BottomNav extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
+
   BottomNav({required this.currentIndex, required this.onTap});
 
   @override
