@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import '../../data/harmony_mock_data.dart';
+import '../widgets/album_card.dart';
 
 class LibraryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: Text(
-          "Library Screen Coming Soon",
-          style: TextStyle(color: Colors.white, fontSize: 20),
+      appBar: AppBar(
+        title: Text("Library"),
+        backgroundColor: Colors.black,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: playlists
+              .map((p) => AlbumCard(title: p['title']!, image: p['image']!))
+              .toList(),
         ),
       ),
     );
